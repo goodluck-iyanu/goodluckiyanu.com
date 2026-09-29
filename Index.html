@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Goodluck Iyanu Ikehungu — Founder, builder and technology entrepreneur creating digital products, software and businesses." />
+  <meta name="theme-color" content="#050505" />
+
+  <title>Goodluck Iyanu Ikehungu</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #050505;
+      color: #f5f5f5;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, 90%);
+      margin: auto;
+    }
+
+    /* NAVIGATION */
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      background: rgba(5, 5, 5, 0.78);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .nav-inner {
+      height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -0.8px;
+    }
+
+    .logo span {
+      color: #ffb000;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: #aaa;
+      font-size: 14px;
+      transition: .2s;
+    }
+
+    .nav-links a:hover {
+      color: white;
+    }
+
+    .nav-button {
+      border: 1px solid rgba(255,255,255,.18);
+      padding: 10px 16px;
+      border-radius: 100px;
+      color: white !important;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 130px 0 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 550px;
+      height: 550px;
+      background: #ffae00;
+      opacity: .08;
+      filter: blur(120px);
+      border-radius: 50%;
+      top: 5%;
+      right: -180px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 12px;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 100px;
+      color: #bbb;
+      font-size: 13px;
+      margin-bottom: 25px;
+      background: rgba(255,255,255,.025);
+    }
+
+    .dot {
+      width: 7px;
+      height: 7px;
+      background: #37d67a;
+      border-radius: 50%;
+      box-shadow: 0 0 12px #37d67a;
+    }
+
+    h1 {
+      max-width: 900px;
+      font-size: clamp(48px, 8vw, 92px);
+      line-height: .98;
+      letter-spacing: -5px;
+      margin-bottom: 28px;
+    }
+
+    h1 span {
+      color: #ffb000;
+    }
+
+    .hero-text {
+      max-width: 650px;
+      color: #a8a8a8;
+      font-size: 19px;
+      line-height: 1.7;
+      margin-bottom: 35px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      padding: 14px 21px;
+      border-radius: 9px;
+      font-weight: 600;
+      font-size: 14px;
+      transition: .2s;
+    }
+
+    .primary {
+      background: #ffb000;
+      color: #080808;
+    }
+
+    .primary:hover {
+      transform: translateY(-2px);
+      background: #ffc238;
+    }
+
+    .secondary {
+      border: 1px solid rgba(255,255,255,.15);
+      color: #eee;
+    }
+
+    .secondary:hover {
+      background: rgba(255,255,255,.06);
+    }
+
+    /* SECTION */
+
+    section {
+      padding: 110px 0;
+      border-top: 1px solid rgba(255,255,255,.06);
+    }
+
+    .section-label {
+      color: #ffb000;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+
+    .section-title {
+      font-size: clamp(32px, 5vw, 55px);
+      letter-spacing: -2px;
+      line-height: 1.05;
+      margin-bottom: 20px;
+    }
+
+    .section-description {
+      color: #999;
+      max-width: 650px;
+      margin-bottom: 45px;
+    }
+
+    /* ABOUT */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .about-text {
+      color: #aaa;
+      font-size: 17px;
+      line-height: 1.8;
+    }
+
+    .about-text p {
+      margin-bottom: 20px;
+    }
+
+    .facts {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .fact {
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 14px;
+      padding: 22px;
+      background: rgba(255,255,255,.025);
+    }
+
+    .fact strong {
+      display: block;
+      font-size: 22px;
+      margin-bottom: 5px;
+    }
+
+    .fact small {
+      color: #888;
+    }
+
+    /* PROJECTS */
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .project {
+      padding: 30px;
+      min-height: 250px;
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 18px;
+      background: linear-gradient(
+        145deg,
+        rgba(255,255,255,.045),
+        rgba(255,255,255,.015)
+      );
+      transition: .25s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project:hover {
+      transform: translateY(-5px);
+      border-color: rgba(255,176,0,.35);
+    }
+
+    .project-number {
+      color: #666;
+      font-size: 13px;
+      margin-bottom: 35px;
+    }
+
+    .project h3 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .project p {
+      color: #929292;
+      max-width: 450px;
+    }
+
+    .project-link {
+      display: inline-block;
+      margin-top: 25px;
+      color: #ffb000;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    /* VISION */
+
+    .vision {
+      border: 1px solid rgba(255,255,255,.09);
+      border-radius: 22px;
+      padding: 55px;
+      background: linear-gradient(
+        120deg,
+        rgba(255,176,0,.09),
+        rgba(255,255,255,.02)
+      );
+    }
+
+    .vision h2 {
+      font-size: clamp(35px, 5vw, 62px);
+      line-height: 1;
+      letter-spacing: -3px;
+      max-width: 800px;
+      margin-bottom: 25px;
+    }
+
+    .vision p {
+      color: #999;
+      max-width: 650px;
+      font-size: 17px;
+    }
+
+    /* CONTACT */
+
+    .contact-box {
+      display: flex;
+      justify-content: space-between;
+      gap: 40px;
+      align-items: end;
+    }
+
+    .contact-box h2 {
+      font-size: clamp(38px, 6vw, 70px);
+      line-height: .95;
+      letter-spacing: -3px;
+    }
+
+    .contact-box p {
+      color: #999;
+      margin-top: 20px;
+      max-width: 500px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      border-top: 1px solid rgba(255,255,255,.06);
+      padding: 30px 0;
+      color: #666;
+      font-size: 13px;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 750px) {
+
+      .nav-links a:not(.nav-button) {
+        display: none;
+      }
+
+      h1 {
+        letter-spacing: -3px;
+      }
+
+      .hero-text {
+        font-size: 17px;
+      }
+
+      .about-grid,
+      .projects {
+        grid-template-columns: 1fr;
+      }
+
+      .facts {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .vision {
+        padding: 32px;
+      }
+
+      .contact-box {
+        display: block;
+      }
+
+      .contact-box .button {
+        display: inline-block;
+        margin-top: 30px;
+      }
+
+      .footer-inner {
+        display: block;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <div class="container nav-inner">
+
+      <a href="#" class="logo">
+        Goodluck<span>.</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#vision">Vision</a>
+        <a href="#contact" class="nav-button">Contact</a>
+      </div>
+
+    </div>
+  </nav>
+
+
+  <!-- HERO -->
+  <main>
+
+    <section class="hero">
+      <div class="container">
+
+        <div class="eyebrow">
+          <span class="dot"></span>
+          Building from Nigeria, thinking globally
+        </div>
+
+        <h1>
+          I build <span>digital products</span> and businesses.
+        </h1>
+
+        <p class="hero-text">
+          I'm Goodluck Iyanu Ikehungu — a founder, software builder and
+          technology entrepreneur focused on creating useful products,
+          platforms and digital businesses.
+        </p>
+
+        <div class="buttons">
+          <a href="#projects" class="button primary">
+            Explore my work →
+          </a>
+
+          <a href="#contact" class="button secondary">
+            Get in touch
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ABOUT -->
+    <section id="about">
+
+      <div class="container">
+
+        <div class="section-label">About</div>
+
+        <div class="about-grid">
+
+          <div>
+            <h2 class="section-title">
+              Building things that can become bigger than me.
+            </h2>
+          </div>
+
+          <div class="about-text">
+
+            <p>
+              I'm interested in technology, software, artificial intelligence,
+              digital products and entrepreneurship.
+            </p>
+
+            <p>
+              My focus is not simply writing code. I want to understand a
+              problem, build the product around it and create something people
+              can actually use.
+            </p>
+
+            <p>
+              I'm currently building within the Hoberg ecosystem while
+              developing my own skills as a founder and product builder.
+            </p>
+
+          </div>
+
+        </div>
+
+        <br><br>
+
+        <div class="facts">
+
+          <div class="fact">
+            <strong>Founder</strong>
+            <small>Hoberg Digital</small>
+          </div>
+
+          <div class="fact">
+            <strong>Software</strong>
+            <small>Products & platforms</small>
+          </div>
+
+          <div class="fact">
+            <strong>AI</strong>
+            <small>Exploring practical AI</small>
+          </div>
+
+          <div class="fact">
+            <strong>Nigeria</strong>
+            <small>Building from Lagos</small>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- PROJECTS -->
+    <section id="projects">
+
+      <div class="container">
+
+        <div class="section-label">Selected Work</div>
+
+        <h2 class="section-title">
+          Things I'm building.
+        </h2>
+
+        <p class="section-description">
+          A growing collection of products, platforms and experiments.
+          Some are live. Others are still being built.
+        </p>
+
+        <div class="projects">
+
+          <div class="project">
+
+            <div class="project-number">01 — DIGITAL ECOSYSTEM</div>
+
+            <h3>Hoberg Digital</h3>
+
+            <p>
+              A technology and digital business ecosystem focused on
+              products, services, software and digital growth.
+            </p>
+
+            <a
+              href="https://hoberg.com.ng"
+              target="_blank"
+              class="project-link"
+            >
+              Visit Hoberg →
+            </a>
+
+          </div>
+
+
+          <div class="project">
+
+            <div class="project-number">02 — COMMERCE</div>
+
+            <h3>Maji</h3>
+
+            <p>
+              A digital commerce platform being developed to help businesses
+              sell products online through modern storefronts.
+            </p>
+
+            <span class="project-link">
+              Currently building →
+            </span>
+
+          </div>
+
+
+          <div class="project">
+
+            <div class="project-number">03 — DIGITAL IDENTITY</div>
+
+            <h3>Hoberg ID</h3>
+
+            <p>
+              A future identity layer designed to connect accounts and
+              experiences across products in the Hoberg ecosystem.
+            </p>
+
+            <span class="project-link">
+              Coming later →
+            </span>
+
+          </div>
+
+
+          <div class="project">
+
+            <div class="project-number">04 — MORE TO COME</div>
+
+            <h3>Future Products</h3>
+
+            <p>
+              More ideas, software products and technology experiments are
+              currently being explored.
+            </p>
+
+            <span class="project-link">
+              Stay tuned →
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- VISION -->
+    <section id="vision">
+
+      <div class="container">
+
+        <div class="vision">
+
+          <div class="section-label">
+            The bigger picture
+          </div>
+
+          <h2>
+            Don't just build websites. Build things people remember.
+          </h2>
+
+          <p>
+            My long-term goal is to build technology companies and products
+            that solve real problems, create opportunities and can operate
+            beyond one market.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+    <section id="contact">
+
+      <div class="container">
+
+        <div class="contact-box">
+
+          <div>
+
+            <div class="section-label">
+              Contact
+            </div>
+
+            <h2>
+              Let's build<br>
+              something.
+            </h2>
+
+            <p>
+              For business, collaborations, technology or product
+              conversations.
+            </p>
+
+          </div>
+
+          <a
+            href="mailto:hello@goodluckiyanu.com"
+            class="button primary"
+          >
+            Email me →
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    <div class="container footer-inner">
+
+      <div>
+        © 2026 Goodluck Iyanu Ikehungu
+      </div>
+
+      <div>
+        Built with ambition.
+      </div>
+
+    </div>
+
+  </footer>
+
+</body>
+</html>
